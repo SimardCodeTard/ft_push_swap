@@ -6,7 +6,7 @@
 /*   By: smenard <smenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 13:26:58 by smenard           #+#    #+#             */
-/*   Updated: 2025/12/16 14:33:43 by smenard          ###   ########.fr       */
+/*   Updated: 2025/12/16 14:46:33 by smenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_list	*ft_lstremove_head(t_list *lst)
 
 t_list	*ft_lstremove_tail(t_list *lst)
 {
-	t_list *prev;
+	t_list	*prev;
 
 	if (!lst)
 		return (NULL);
