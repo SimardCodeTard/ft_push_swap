@@ -6,7 +6,7 @@
 /*   By: smenard <smenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 13:10:00 by smenard           #+#    #+#             */
-/*   Updated: 2025/12/16 13:25:58 by smenard          ###   ########.fr       */
+/*   Updated: 2025/12/16 14:43:30 by smenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,26 @@
 
 # include "lib_defines.h"
 
-t_list	*ft_lstnew(void);
+/* ft_lstnew.c */
+t_list	*ft_lstnew(int value);
 
-t_list	*ft_lstadd_head(t_list *lst, int value);
+/* ft_lstadd.c */
+t_list	*ft_lstadd_new_head(t_list *lst, int value);
 
-t_list	*ft_lstadd_tail(t_list *lst, int value);
+t_list	*ft_lstadd_head(t_list *lst, t_list *new);
 
+t_list	*ft_lstadd_new_tail(t_list *lst, int value);
+
+t_list	*ft_lstadd_tail(t_list *lst, t_list *new);
+
+/* ft_lstremove.c */
 t_list	*ft_lstremove_head(t_list *lst);
 
 t_list	*ft_lstremove_tail(t_list *lst);
 
+/* ft_lstclear.c */
+void	ft_lstclear_start(t_list *lst_start);
+
+void	ft_lstclear_end(t_list *lst_end);
 
 #endif
