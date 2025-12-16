@@ -6,6 +6,14 @@
 /*   By: smenard <smenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 18:12:55 by smenard           #+#    #+#             */
-/*   Updated: 2025/12/16 10:24:31 by smenard          ###   ########.fr       */
+/*   Updated: 2025/12/16 16:24:45 by smenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef LIB_H
+# define LIB_H
+
+# include "list/list.h"
+# include "mem/mem.h"
+
+#endif

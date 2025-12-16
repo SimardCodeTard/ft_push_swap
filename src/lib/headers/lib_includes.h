@@ -1,16 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   debug.h                                            :+:      :+:    :+:   */
+/*   lib_includes.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smenard <smenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/15 17:32:25 by smenard           #+#    #+#             */
-/*   Updated: 2025/12/16 13:12:33 by smenard          ###   ########.fr       */
+/*   Created: 2025/12/16 11:18:48 by smenard           #+#    #+#             */
+/*   Updated: 2025/12/16 14:44:32 by smenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEBUG_H
-# define DEBUG_H
+#ifndef LIB_INCLUDES_H
+# define LIB_INCLUDES_H
+
+# include <stdlib.h>
 
 #endif
