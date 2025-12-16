@@ -6,7 +6,7 @@
 /*   By: smenard <smenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 11:18:22 by smenard           #+#    #+#             */
-/*   Updated: 2025/12/16 11:30:29 by smenard          ###   ########.fr       */
+/*   Updated: 2025/12/16 11:33:09 by smenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ typedef struct s_list
 {
 	struct s_list	*next;
 	struct s_list	*prev;
+	struct s_list	*head;
+	struct s_list	*tail;
 	int				value;
 	size_t			*size;
 }					t_list;
