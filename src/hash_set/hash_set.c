@@ -6,7 +6,7 @@
 /*   By: vquetier <vquetier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:03:29 by vquetier          #+#    #+#             */
-/*   Updated: 2025/12/16 13:25:36 by vquetier         ###   ########lyon.fr   */
+/*   Updated: 2025/12/16 13:35:39 by vquetier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,30 +59,28 @@ t_set_result	add_in_set(t_set *set, int key)
 
 t_set	*create_set(uint32_t stack_size)
 {
-	uint32_t	lowest_size;
-	uint32_t	set_size;
 	t_set		*set;
+	uint32_t	lowest_size;
 
-	lowest_size = stack_size + (stack_size + 1) / 2;
-	set_size = 1;
-	while (set_size < lowest_size)
-		set_size *= 2;
 	set = malloc(sizeof(t_set));
 	if (!set)
 		return (NULL);
-	set->table = ft_calloc(set_size, sizeof(int));
+	lowest_size = stack_size + (stack_size + 1) / 2;
+	set->size = 1;
+	while (set->size < lowest_size)
+		set->size *= 2;
+	set->table = ft_calloc(set->size, sizeof(int));
 	if (!set->table)
 	{
 		free_set(set, FREE_STRUCT);
 		return (NULL);
 	}
-	set->used = ft_calloc(set_size, sizeof(bool));
+	set->used = ft_calloc(set->size, sizeof(bool));
 	if (!set->used)
 	{
 		free_set(set, FREE_STRUCT | FREE_TABLE);
 		return (NULL);
 	}
-	set->size = set_size;
-	set->mask = set_size - 1;
+	set->mask = set->size - 1;
 	return (set);
 }
