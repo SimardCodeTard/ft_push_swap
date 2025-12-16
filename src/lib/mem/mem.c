@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   mem.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vquetier <vquetier@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: smenard <smenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 14:09:22 by vquetier          #+#    #+#             */
-/*   Updated: 2025/12/16 15:33:06 by vquetier         ###   ########lyon.fr   */
+/*   Updated: 2025/12/16 15:42:19 by smenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mem_defines.h"
+#include "mem.h"
 
 static t_block32	get_block(uint8_t b)
 {
