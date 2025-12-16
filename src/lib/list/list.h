@@ -1,40 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lib_defines.h                                      :+:      :+:    :+:   */
+/*   list.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smenard <smenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/16 11:18:22 by smenard           #+#    #+#             */
-/*   Updated: 2025/12/16 13:09:36 by smenard          ###   ########.fr       */
+/*   Created: 2025/12/16 13:10:00 by smenard           #+#    #+#             */
+/*   Updated: 2025/12/16 13:25:58 by smenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIB_DEFINES_H
-# define LIB_DEFINES_H
+#ifndef LIST_H
+# define LIST_H
 
-# include "lib_includes.h"
+# include "lib_defines.h"
 
-typedef struct s_list
-{
-	struct s_list	*next;
-	struct s_list	*prev;
-	int				value;
-	size_t			*size;
-}					t_list;
+t_list	*ft_lstnew(void);
 
-typedef struct s_stack
-{
-	t_list			*head;
-	t_list			*tail;
-	size_t			*size;
-}					t_stack;
+t_list	*ft_lstadd_head(t_list *lst, int value);
 
-typedef struct s_stacks
-{
-	t_stack			*stack_a;
-	t_stack			*stack_b;
-	size_t			combined_sizes;
-}					t_stacks;
+t_list	*ft_lstadd_tail(t_list *lst, int value);
+
+t_list	*ft_lstremove_head(t_list *lst);
+
+t_list	*ft_lstremove_tail(t_list *lst);
+
 
 #endif
