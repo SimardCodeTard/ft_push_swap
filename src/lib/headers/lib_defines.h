@@ -6,18 +6,28 @@
 /*   By: smenard <smenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 11:18:22 by smenard           #+#    #+#             */
-/*   Updated: 2025/12/16 11:25:28 by smenard          ###   ########.fr       */
+/*   Updated: 2025/12/16 11:30:29 by smenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIB_DEFINES_H
 # define LIB_DEFINES_H
 
+# include "lib_includes.h"
+
 typedef struct s_list
 {
 	struct s_list	*next;
 	struct s_list	*prev;
 	int				value;
+	size_t			*size;
 }					t_list;
+
+typedef struct s_stacks
+{
+	t_list			*stack_a;
+	t_list			*stack_b;
+	size_t			combined_stack;
+}					t_stacks;
 
 #endif
