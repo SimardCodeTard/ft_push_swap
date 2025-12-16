@@ -4,7 +4,7 @@ LIST_DIR = list/
 
 MEM_DIR = mem/
 
-INCLUDES=headers
+INCLUDES=-I./ -Iheaders -I$(MEM_DIR)/headers -I$(LIST_DIR)/headers
 
 SRC_FILES = ./$(LIST_DIR)ft_lstadd.c \
 	./$(LIST_DIR)ft_lstclear.c \
@@ -26,8 +26,8 @@ all: $(NAME)
 $(NAME) : $(SRCS_OBJ)
 	ar rcs $(NAME) $(SRCS_OBJ)
 
-$(LIST_DIR)%.o: $(LIST_DIR)%.c
-	$(CC) -c $(CFLAGS) -MMD -MP $< -o $@ -I$(INCLUDES)
+%.o: %.c
+	$(CC) -c $(CFLAGS) -MMD -MP $< -o $@ $(INCLUDES)
 
 clean:
 	rm -rf $(ALL_OBJ) $(DFILES)
