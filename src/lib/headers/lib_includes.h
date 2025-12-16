@@ -6,11 +6,13 @@
 /*   By: smenard <smenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 11:18:48 by smenard           #+#    #+#             */
-/*   Updated: 2025/12/16 11:19:05 by smenard          ###   ########.fr       */
+/*   Updated: 2025/12/16 11:29:15 by smenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIB_INCLUDES_H
 # define LIB_INCLUDES_H
+
+# include <stdio.h>
 
 #endif
