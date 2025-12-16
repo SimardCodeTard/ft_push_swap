@@ -6,7 +6,7 @@
 /*   By: smenard <smenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 18:12:55 by smenard           #+#    #+#             */
-/*   Updated: 2025/12/16 15:47:51 by smenard          ###   ########.fr       */
+/*   Updated: 2025/12/16 16:24:45 by smenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define LIB_H
 
 # include "list/list.h"
-
-void	*ft_calloc(size_t nmemb, size_t size);
+# include "mem/mem.h"
 
 #endif
