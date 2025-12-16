@@ -6,7 +6,7 @@
 /*   By: smenard <smenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 13:27:15 by smenard           #+#    #+#             */
-/*   Updated: 2025/12/16 14:46:19 by smenard          ###   ########.fr       */
+/*   Updated: 2025/12/16 15:14:24 by smenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@ t_list	*ft_lstadd_new_head(t_list *lst, int value)
 {
 	t_list	*new;
 
-	new = ft_lstnew(value);
+	new = ft_lstnew(value, lst->size);
 	return (ft_lstadd_head(lst, new));
 }
 
 t_list	*ft_lstadd_head(t_list *lst, t_list *new)
 {
+	if (!lst || !new)
+		return (NULL);
 	while (lst->prev)
 		lst = lst->prev;
 	lst->prev = new;
@@ -33,7 +35,7 @@ t_list	*ft_lstadd_new_tail(t_list *lst, int value)
 {
 	t_list	*new;
 
-	new = ft_lstnew(value);
+	new = ft_lstnew(value, lst->size);
 	return (ft_lstadd_tail(lst, new));
 }
 

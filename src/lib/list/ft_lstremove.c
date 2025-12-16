@@ -6,7 +6,7 @@
 /*   By: smenard <smenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 13:26:58 by smenard           #+#    #+#             */
-/*   Updated: 2025/12/16 14:46:33 by smenard          ###   ########.fr       */
+/*   Updated: 2025/12/16 15:16:50 by smenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ t_list	*ft_lstremove_head(t_list *lst)
 	while (lst->prev)
 		lst = lst->prev;
 	next = lst->next;
-	ft_lstclear_start(lst);
 	next->prev = NULL;
+	if (*lst->size > 0)
+		(*lst->size) = 1;
 	return (next);
 }
 
@@ -35,7 +36,8 @@ t_list	*ft_lstremove_tail(t_list *lst)
 	while (lst->next)
 		lst = lst->next;
 	prev = lst->prev;
-	ft_lstclear_start(lst);
 	prev->next = NULL;
+	if (*lst->size > 0)
+		(*lst->size) = 1;
 	return (prev);
 }
