@@ -1,14 +1,18 @@
 CFLAGS = -Wall -Wextra -Werror
 
-SRC_DIR=./
+LIST_DIR = list/
 
 INCLUDES=headers
 
-SRC_FILES = \
+SRC_FILES = ./$(LIST_DIR)ft_lstadd.c \
+	./$(LIST_DIR)ft_lstclear.c \
+	./$(LIST_DIR)ft_lstnew.c \
+	./$(LIST_DIR)ft_lstremove.c \
+	./$(LIST_DIR)ft_lstadd.c
 
 SRCS_OBJ = $(SRC_FILES:.c=.o)
 
-ALL_OBJ = $(SRCS_OBJ) $(BONUS_OBJ)
+ALL_OBJ = $(SRCS_OBJ)
 
 DFILES = $(ALL_OBJ:.o=.d)
 
@@ -19,7 +23,7 @@ all: $(NAME)
 $(NAME) : $(SRCS_OBJ)
 	ar rcs $(NAME) $(SRCS_OBJ)
 
-$(SRC_DIR)/%.o: $(SRC_DIR)/%.c
+$(LIST_DIR)%.o: $(LIST_DIR)%.c
 	$(CC) -c $(CFLAGS) -MMD -MP $< -o $@ -I$(INCLUDES)
 
 clean:
