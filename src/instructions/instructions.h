@@ -6,7 +6,7 @@
 /*   By: smenard <smenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 15:19:38 by vquetier          #+#    #+#             */
-/*   Updated: 2025/12/18 19:43:48 by smenard          ###   ########.fr       */
+/*   Updated: 2025/12/18 19:46:59 by smenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,10 @@ void	push_b(t_stacks *stacks);
 void	rotate_a(t_stacks *stacks);
 void	rotate_b(t_stacks *stacks);
 void	rotate_all(t_stacks *stacks);
+
+/* reverse rotate */
+void	reverse_rotate_a(t_stacks *stacks);
+void	reverse_rotate_b(t_stacks *stacks);
+void	reverse_rotate_all(t_stacks *stacks);
 
 #endif
