@@ -6,7 +6,7 @@
 /*   By: smenard <smenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 17:15:23 by smenard           #+#    #+#             */
-/*   Updated: 2025/12/18 17:43:08 by smenard          ###   ########.fr       */
+/*   Updated: 2025/12/18 19:14:41 by smenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ void	swap_b(t_stacks *stacks)
 
 void	swap_all(t_stacks *stacks)
 {
-	if (!swap(stacks->stack_a));
+	if (!swap(stacks->stack_a))
+		;
 	ifswap(stacks->stack_b);
 }
