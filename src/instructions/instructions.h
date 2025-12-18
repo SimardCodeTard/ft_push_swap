@@ -6,7 +6,7 @@
 /*   By: smenard <smenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 15:19:38 by vquetier          #+#    #+#             */
-/*   Updated: 2025/12/18 19:32:23 by smenard          ###   ########.fr       */
+/*   Updated: 2025/12/18 19:43:48 by smenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,4 +23,10 @@ void	swap_all(t_stacks *stacks);
 /* push */
 void	push_a(t_stacks *stacks);
 void	push_b(t_stacks *stacks);
+
+/* rotate */
+void	rotate_a(t_stacks *stacks);
+void	rotate_b(t_stacks *stacks);
+void	rotate_all(t_stacks *stacks);
+
 #endif

@@ -6,7 +6,7 @@
 /*   By: smenard <smenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 19:32:31 by smenard           #+#    #+#             */
-/*   Updated: 2025/12/18 19:42:13 by smenard          ###   ########.fr       */
+/*   Updated: 2025/12/18 19:45:45 by smenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ static void	push(t_stack *from, t_stack *to)
 {
 	if (from->size == 0)
 	{
-		ft_printf("WARNING: tried to push from a stack of size 0\n");
 		return ;
 	}
 	ft_stackadd_head(to, ft_stackremove_head(from));
