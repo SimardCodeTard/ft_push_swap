@@ -6,7 +6,7 @@
 /*   By: smenard <smenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 15:05:32 by smenard           #+#    #+#             */
-/*   Updated: 2025/12/18 16:09:07 by smenard          ###   ########.fr       */
+/*   Updated: 2025/12/18 16:16:41 by smenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_list	*ft_stackremove_head(t_stack *stack)
 
 t_list	*ft_stackremove_tail(t_stack *stack)
 {
-	t_list *old_tail;
+	t_list	*old_tail;
 
 	old_tail = ft_lstremove_tail(stack->tail);
 	stack->tail = stack->tail->prev;
