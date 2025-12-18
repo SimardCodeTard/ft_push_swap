@@ -81,9 +81,6 @@ INCLUDES =				$(INCLUDES_INSTRUCTIONS) $(INCLUDES_LIB) $(INCLUDES_PARSE) $(INCLU
 
 MAIN_FILES =			./$(SRC_DIR)/push_swap.c \
 
-# ---------- HASH_SET ----------
-
-
 # ---------- INSTRUCTIONS ----------
 
 INSTRUCTIONS_FILES =	./$(SRC_DIR)/$(INSTRUCTIONS_DIR)/push.c \
@@ -102,17 +99,29 @@ LIB_LIST_FILES =		./$(SRC_DIR)/$(LIB_DIR)/$(LIB_LIST_DIR)/ft_lstadd.c \
 
 LIB_MEM_FILES =			./$(SRC_DIR)/$(LIB_DIR)/$(LIB_MEM_DIR)/mem.c
 
+LIB_STACK_FILES=		./$(SRC_DIR)/$(LIB_DIR)/$(LIB_STACK_DIR)/ft_stackadd.c \
+						./$(SRC_DIR)/$(LIB_DIR)/$(LIB_STACK_DIR)/ft_stacknew.c \
+						./$(SRC_DIR)/$(LIB_DIR)/$(LIB_STACK_DIR)/ft_stackremove.c
+
 LIB_STRING_FILES =		./$(SRC_DIR)/$(LIB_DIR)/$(LIB_STRING_DIR)/string.c \
 
 LIB_FILES =				$(LIB_HASH_SET_FILES) \
 						$(LIB_LIST_FILES) \
 						$(LIB_MEM_FILES) \
-						$(LIB_STRING_FILES)
+						$(LIB_STRING_FILES) \
+						$(LIB_STACK_FILES)
 
 # ---------- PARSE ----------
 
 PARSE_FILES =			./$(SRC_DIR)/$(PARSE_DIR)/parse.c \
 						./$(SRC_DIR)/$(PARSE_DIR)/parse_utils.c
+
+# ---------- ALL ----------
+
+ALL_FILES = 			$(MAIN_FILES) \
+						$(INSTRUCTIONS_FILES) \
+						$(LIB_FILES) \
+						$(PARSE_FILES)
 
 # ========== OBJ ==========
 
@@ -141,6 +150,8 @@ DFILES = $(ALL_OBJ:.o=.d)
 
 # ========== NAMES ==========
 
+NAME_MAIN_DEBUG = push_swap_debug
+
 NAME_MAIN = push_swap
 
 NAME_INSTRUCTIONS = instructions.a
@@ -157,6 +168,11 @@ all: $(NAME_MAIN)
 
 $(NAME_MAIN): $(SRCS_OBJ) $(NAME_INSTRUCTIONS) $(NAME_PARSE) $(NAME_LIB)
 	$(CC) $(CFLAGS) $(SRCS_OBJ) $(NAME_INSTRUCTIONS) $(NAME_PARSE) $(NAME_LIB) -o $@
+
+debug: $(NAME_MAIN_DEBUG)
+
+$(NAME_MAIN_DEBUG): $(ALL_FILES)
+	$(CC) $(CFLAGS) -g3 $(ALL_FILES) -o $@ $(INCLUDES)
 
 # ---------- INSTRUCTIONS ----------
 
@@ -185,7 +201,7 @@ clean:
 	rm -rf $(DFILES) $(ALL_OBJ) $(NAME_INSTRUCTIONS) $(NAME_PARSE) $(NAME_LIB)
 
 fclean: clean
-	rm -rf $(NAME_MAIN)
+	rm -rf $(NAME_MAIN) $(NAME_MAIN_DEBUG)
 
 # ---------- re ----------
 

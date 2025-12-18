@@ -6,7 +6,7 @@
 /*   By: smenard <smenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 12:55:53 by vquetier          #+#    #+#             */
-/*   Updated: 2025/12/18 14:42:09 by smenard          ###   ########.fr       */
+/*   Updated: 2025/12/18 16:06:36 by smenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ int	main(int ac, char **av)
 	// t_list	*list;
 
 	args = parse(ac, av);
-	// if (!args || !args->stacks->stack_a->head)
-	// {
-	// 	__builtin_printf("ERROR EH OUI\n");
-	// 	return (1);
-	// }
+	if (!args || !args->stacks->stack_a->head)
+	{
+		__builtin_printf("ERROR EH OUI\n");
+		return (1);
+	}
 	// list = args->stacks->stack_a->head;
 	// while (list)
 	// {

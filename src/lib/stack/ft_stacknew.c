@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lib.h                                              :+:      :+:    :+:   */
+/*   ft_stacknew.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smenard <smenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/15 17:32:48 by smenard           #+#    #+#             */
-/*   Updated: 2025/12/16 14:37:09 by smenard          ###   ########.fr       */
+/*   Created: 2025/12/18 14:58:00 by smenard           #+#    #+#             */
+/*   Updated: 2025/12/18 16:08:50 by smenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIB_H
-# define LIB_H
+#include "stack.h"
 
-# include "list/list.h"
+t_stack	*ft_stacknew(void)
+{
+	t_stack	*new_stack;
 
-#endif
+	new_stack = ft_calloc(1, sizeof(t_stack));
+	return (new_stack);
+}

@@ -6,13 +6,13 @@
 /*   By: smenard <smenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 13:40:12 by smenard           #+#    #+#             */
-/*   Updated: 2025/12/18 13:42:41 by smenard          ###   ########.fr       */
+/*   Updated: 2025/12/18 14:58:31 by smenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRING_INCLUDES_H
 # define STRING_INCLUDES_H
 
-#include <stdlib.h>
+# include <stdlib.h>
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: smenard <smenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 16:39:30 by vquetier          #+#    #+#             */
-/*   Updated: 2025/12/18 14:42:27 by smenard          ###   ########.fr       */
+/*   Updated: 2025/12/18 14:55:59 by smenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	stack_add(t_stack *stack, int value)
 {
 	t_list	*new;
 
-	new = ft_lstnew(value, NULL);
+	new = ft_lstnew(value);
 	if (!new)
 		return (ERROR);
 	if (!stack->head || !stack->tail)

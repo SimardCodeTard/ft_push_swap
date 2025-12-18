@@ -6,7 +6,7 @@
 /*   By: smenard <smenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 18:12:55 by smenard           #+#    #+#             */
-/*   Updated: 2025/12/18 14:44:42 by smenard          ###   ########.fr       */
+/*   Updated: 2025/12/18 15:37:15 by smenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,6 @@
 # include "hash_set.h"
 # include "mem.h"
 # include "string.h"
+# include "stack.h"
 
 #endif

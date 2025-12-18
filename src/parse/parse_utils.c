@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vquetier <vquetier@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: smenard <smenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 14:23:52 by vquetier          #+#    #+#             */
-/*   Updated: 2025/12/17 14:50:43 by vquetier         ###   ########lyon.fr   */
+/*   Updated: 2025/12/18 16:09:38 by smenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,26 +54,19 @@ t_args	*create_args(void)
 {
 	t_args	*args;
 
-	args = malloc(sizeof(t_args));
+	args = ft_calloc(1, sizeof(t_args));
 	if (!args)
 		return (NULL);
-	args->flags = 0;
-	args->stacks = malloc(sizeof(t_stacks));
+	args->stacks = ft_calloc(1, sizeof(t_stacks));
 	if (!args->stacks)
 		return (free_args(args, FREE_ARGS));
 	args->stacks->combined_sizes = 0;
-	args->stacks->stack_a = malloc(sizeof(t_stack));
+	args->stacks->stack_a = ft_stacknew();
 	if (!args->stacks->stack_a)
 		return (free_args(args, FREE_ARGS | FREE_STACKS));
-	args->stacks->stack_b = malloc(sizeof(t_stack));
+	args->stacks->stack_b = ft_stacknew();
 	if (!args->stacks->stack_b)
 		return (free_args(args, FREE_ARGS | FREE_STACKS | FREE_A));
-	args->stacks->stack_b->head = NULL;
-	args->stacks->stack_b->tail = NULL;
-	args->stacks->stack_b->size = 0;
-	args->stacks->stack_a->head = NULL;
-	args->stacks->stack_a->tail = NULL;
-	args->stacks->stack_a->size = 0;
 	return (args);
 }
 

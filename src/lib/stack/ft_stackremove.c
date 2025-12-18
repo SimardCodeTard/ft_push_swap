@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_includes.h                                   :+:      :+:    :+:   */
+/*   ft_stackremove.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smenard <smenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/16 16:50:59 by vquetier          #+#    #+#             */
-/*   Updated: 2025/12/18 15:35:32 by smenard          ###   ########.fr       */
+/*   Created: 2025/12/18 15:05:32 by smenard           #+#    #+#             */
+/*   Updated: 2025/12/18 16:09:07 by smenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSE_INCLUDES_H
-# define PARSE_INCLUDES_H
+#include "stack.h"
 
-# include <stdint.h>
-# include <stdlib.h>
-# include <limits.h>
-# include "hash_set.h"
-# include "lib.h"
+t_list	*ft_stackremove_head(t_stack *stack)
+{
+	t_list	*old_head;
 
-#endif
+	old_head = ft_lstremove_head(stack->head);
+	stack->head = stack->head->next;
+	stack->size -= 1;
+	return (old_head);
+}
+
+t_list	*ft_stackremove_tail(t_stack *stack)
+{
+	t_list *old_tail;
+
+	old_tail = ft_lstremove_tail(stack->tail);
+	stack->tail = stack->tail->prev;
+	stack->size -= 1;
+	return (old_tail);
+}
