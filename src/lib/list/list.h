@@ -6,18 +6,17 @@
 /*   By: smenard <smenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 13:10:00 by smenard           #+#    #+#             */
-/*   Updated: 2025/12/16 16:21:10 by smenard          ###   ########.fr       */
+/*   Updated: 2025/12/18 15:25:36 by smenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIST_H
 # define LIST_H
 
-# include "lib_defines.h"
-# include "lib.h"
+# include "list_includes.h"
 
 /* ft_lstnew.c */
-t_list	*ft_lstnew(int value, size_t *size);
+t_list	*ft_lstnew(int value);
 
 /* ft_lstadd.c */
 t_list	*ft_lstadd_new_head(t_list *lst, int value);

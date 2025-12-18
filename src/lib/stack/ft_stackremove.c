@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lib.h                                              :+:      :+:    :+:   */
+/*   ft_stackremove.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smenard <smenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/15 18:12:55 by smenard           #+#    #+#             */
-/*   Updated: 2025/12/18 15:37:15 by smenard          ###   ########.fr       */
+/*   Created: 2025/12/18 15:05:32 by smenard           #+#    #+#             */
+/*   Updated: 2025/12/18 16:16:41 by smenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIB_H
-# define LIB_H
+#include "stack.h"
 
-# include "list.h"
-# include "hash_set.h"
-# include "mem.h"
-# include "string.h"
-# include "stack.h"
+t_list	*ft_stackremove_head(t_stack *stack)
+{
+	t_list	*old_head;
 
-#endif
+	old_head = ft_lstremove_head(stack->head);
+	stack->head = stack->head->next;
+	stack->size -= 1;
+	return (old_head);
+}
+
+t_list	*ft_stackremove_tail(t_stack *stack)
+{
+	t_list	*old_tail;
+
+	old_tail = ft_lstremove_tail(stack->tail);
+	stack->tail = stack->tail->prev;
+	stack->size -= 1;
+	return (old_tail);
+}

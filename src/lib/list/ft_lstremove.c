@@ -6,7 +6,7 @@
 /*   By: smenard <smenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 13:26:58 by smenard           #+#    #+#             */
-/*   Updated: 2025/12/16 15:16:50 by smenard          ###   ########.fr       */
+/*   Updated: 2025/12/18 15:30:12 by smenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,7 @@ t_list	*ft_lstremove_head(t_list *lst)
 		lst = lst->prev;
 	next = lst->next;
 	next->prev = NULL;
-	if (*lst->size > 0)
-		(*lst->size) = 1;
-	return (next);
+	return (lst);
 }
 
 t_list	*ft_lstremove_tail(t_list *lst)
@@ -37,7 +35,5 @@ t_list	*ft_lstremove_tail(t_list *lst)
 		lst = lst->next;
 	prev = lst->prev;
 	prev->next = NULL;
-	if (*lst->size > 0)
-		(*lst->size) = 1;
-	return (prev);
+	return (lst);
 }

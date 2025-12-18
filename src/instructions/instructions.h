@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lib.h                                              :+:      :+:    :+:   */
+/*   instructions.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smenard <smenard@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vquetier <vquetier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/15 18:12:55 by smenard           #+#    #+#             */
-/*   Updated: 2025/12/18 15:37:15 by smenard          ###   ########.fr       */
+/*   Created: 2025/12/17 15:19:38 by vquetier          #+#    #+#             */
+/*   Updated: 2025/12/17 15:44:24 by vquetier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIB_H
-# define LIB_H
+#ifndef INSTRUCTIONS_H
+# define INSTRUCTIONS_H
 
-# include "list.h"
-# include "hash_set.h"
-# include "mem.h"
-# include "string.h"
-# include "stack.h"
+void	sa(t_stacks *stacks);
+void	sb(t_stacks *stacks);
 
 #endif

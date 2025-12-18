@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lib.h                                              :+:      :+:    :+:   */
+/*   list_includes.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: smenard <smenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/15 18:12:55 by smenard           #+#    #+#             */
-/*   Updated: 2025/12/18 15:37:15 by smenard          ###   ########.fr       */
+/*   Created: 2025/12/18 15:24:59 by smenard           #+#    #+#             */
+/*   Updated: 2025/12/18 15:25:25 by smenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIB_H
-# define LIB_H
+#ifndef LIST_INCLUDES_H
+# define LIST_INCLUDES_H
 
-# include "list.h"
-# include "hash_set.h"
-# include "mem.h"
-# include "string.h"
-# include "stack.h"
+# include "lib_defines.h"
+# include "lib.h"
 
 #endif

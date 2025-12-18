@@ -1,11 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push_swap.h                                     :+:      :+:    :+:   */
+/*   instructions_defines.h                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: smenard <smenard@student.42.fr>            +#+  +:+       +#+        */
+/*   By: vquetier <vquetier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/15 17:32:15 by smenard           #+#    #+#             */
-/*   Updated: 2025/12/16 10:24:08 by smenard          ###   ########.fr       */
+/*   Created: 2025/12/17 15:18:31 by vquetier          #+#    #+#             */
+/*   Updated: 2025/12/17 15:42:25 by vquetier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef INSTRUCTIONS_DEFINES_H
+# define INSTRUCTIONS_DEFINES_H
+
+# include "instructions_includes.h"
+
+#endif
