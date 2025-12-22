@@ -34,6 +34,14 @@ PARSE_DIR = parse
 
 HEADERS_DIR = headers
 
+# ---------- ALGO ----------
+
+ALGO_DIR = algo
+
+ALGO_SIMPLE_DIR = simple
+
+#  ========== INCLUDES ==========
+
 # ---------- INSTRUCTIONS ----------
 
 INCLUDES_INSTRUCTIONS =	-I./$(SRC_DIR)/$(INSTRUCTIONS_DIR) \
@@ -74,12 +82,17 @@ INCLUDES_LIB =			$(INCLUDES_LIB_MAIN) \
 
 INCLUDES_PARSE = 		-I./$(SRC_DIR)/$(PARSE_DIR) -I./$(SRC_DIR)/$(PARSE_DIR)/$(HEADERS_DIR)
 
+# ---------- ALGO ----------
+
+INCLUDES_ALGO_SIMPLE =	-I./$(SRC_DIR)/$(ALGO_DIR)/$(ALGO_SIMPLE_DIR) -I./$(SRC_DIR)/$(ALGO_DIR)/$(ALGO_SIMPLE_DIR)/$(HEADERS_DIR)
+
+INCLUDES_ALGO =			$(INCLUDES_ALGO_SIMPLE)
+
 # ---------- MAIN ----------
 
 INCLUDES_MAIN = 		-I./$(SRC_DIR) -I./$(SRC_DIR)/$(HEADERS_DIR)
 
-
-INCLUDES =				$(INCLUDES_INSTRUCTIONS) $(INCLUDES_LIB) $(INCLUDES_PARSE) $(INCLUDES_MAIN)
+INCLUDES =				$(INCLUDES_INSTRUCTIONS) $(INCLUDES_LIB) $(INCLUDES_PARSE) $(INCLUDES_ALGO) $(INCLUDES_MAIN)
 
 # ========== FILES ==========
 
@@ -128,12 +141,19 @@ LIB_FILES =				$(LIB_HASH_SET_FILES) \
 PARSE_FILES =			./$(SRC_DIR)/$(PARSE_DIR)/parse.c \
 						./$(SRC_DIR)/$(PARSE_DIR)/parse_utils.c
 
+# --------- ALGO ----------
+
+ALGO_SIMPLE_FILES =		./$(SRC_DIR)/$(ALGO_DIR)/$(ALGO_SIMPLE_DIR)/simple.c
+
+ALGO_FILES =			$(ALGO_SIMPLE_FILES)
+
 # ---------- ALL ----------
 
 ALL_FILES = 			$(MAIN_FILES) \
 						$(INSTRUCTIONS_FILES) \
 						$(LIB_FILES) \
-						$(PARSE_FILES)
+						$(PARSE_FILES) \
+						$(ALGO_FILES)
 
 # ========== OBJ ==========
 
@@ -152,9 +172,13 @@ LIB_OBJ = $(LIB_FILES:.c=.o)
 
 PARSE_OBJ = $(PARSE_FILES:.c=.o)
 
+# ---------- ALGO ----------
+
+ALG_OBJ = $(ALGO_FILES:.c=.o)
+
 # ---------- ALL ----------
 
-ALL_OBJ = $(SRCS_OBJ) $(INSTRUCTIONS_OBJ) $(LIB_OBJ) $(PARSE_OBJ)
+ALL_OBJ = $(SRCS_OBJ) $(INSTRUCTIONS_OBJ) $(LIB_OBJ) $(PARSE_OBJ) $(ALG_OBJ)
 
 # ========== DFILES ==========
 
@@ -172,14 +196,16 @@ NAME_LIB = lib.a
 
 NAME_PARSE = parse.a
 
+NAME_ALGO = algo.a
+
 # ========== RULES ==========
 
 # ---------- MAIN ----------
 
 all: $(NAME_MAIN)
 
-$(NAME_MAIN): $(SRCS_OBJ) $(NAME_INSTRUCTIONS) $(NAME_PARSE) $(NAME_LIB)
-	$(CC) $(CFLAGS) $(SRCS_OBJ) $(NAME_INSTRUCTIONS) $(NAME_PARSE) $(NAME_LIB) -o $@
+$(NAME_MAIN): $(SRCS_OBJ) $(NAME_INSTRUCTIONS) $(NAME_PARSE) $(NAME_ALGO) $(NAME_LIB)
+	$(CC) $(CFLAGS) $^ -o $@
 
 debug: $(NAME_MAIN_DEBUG)
 
@@ -207,10 +233,17 @@ parse: $(NAME_PARSE)
 $(NAME_PARSE): $(PARSE_OBJ)
 	ar rcs $@ $^
 
+# ---------- ALGO ----------
+
+algo: $(NAME_ALGO)
+
+$(NAME_ALGO): $(ALGO_OBJ)
+	ar rcs $@ $^
+
 # ---------- CLEAN ----------
 
 clean:
-	rm -rf $(DFILES) $(ALL_OBJ) $(NAME_INSTRUCTIONS) $(NAME_PARSE) $(NAME_LIB)
+	rm -rf $(DFILES) $(ALL_OBJ) $(NAME_INSTRUCTIONS) $(NAME_PARSE) $(NAME_LIB) $(NAME_ALGO)
 
 fclean: clean
 	rm -rf $(NAME_MAIN) $(NAME_MAIN_DEBUG)
