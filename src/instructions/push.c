@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
 #include "instructions.h"
 
 static void	push(t_stack *from, t_stack *to)
@@ -24,10 +25,12 @@ static void	push(t_stack *from, t_stack *to)
 
 void	push_a(t_stacks *stacks)
 {
+	ft_printf("pa\n");
 	push(stacks->stack_b, stacks->stack_a);
 }
 
 void	pb(t_stacks *stacks)
 {
+	ft_printf("pb\n");
 	push(stacks->stack_a, stacks->stack_b);
 }

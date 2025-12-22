@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
 #include "instructions.h"
 
 static void	reverse_rotate(t_stack *stack)
@@ -24,16 +25,19 @@ static void	reverse_rotate(t_stack *stack)
 
 void	rra(t_stacks *stacks)
 {
+	ft_printf("rra\n");
 	reverse_rotate(stacks->stack_a);
 }
 
 void	rrb(t_stacks *stacks)
 {
+	ft_printf("rrb\n");
 	reverse_rotate(stacks->stack_b);
 }
 
 void	rrr(t_stacks *stacks)
 {
+	ft_printf("rrr\n");
 	reverse_rotate(stacks->stack_a);
 	reverse_rotate(stacks->stack_b);
 }

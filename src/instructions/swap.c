@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_printf.h"
 #include "instructions.h"
 
 static bool	swap(t_stack *stack)
@@ -31,16 +32,19 @@ static bool	swap(t_stack *stack)
 
 void	sa(t_stacks *stacks)
 {
+	ft_printf("sa\n");
 	swap(stacks->stack_a);
 }
 
 void	sb(t_stacks *stacks)
 {
+	ft_printf("sb\n");
 	swap(stacks->stack_b);
 }
 
 void	ss(t_stacks *stacks)
 {
+	ft_printf("sa\n");
 	swap(stacks->stack_a);
 	swap(stacks->stack_b);
 }

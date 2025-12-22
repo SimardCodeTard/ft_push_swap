@@ -24,16 +24,19 @@ static void	rotate(t_stack *stack)
 
 void	ra(t_stacks *stacks)
 {
+	ft_printf("ra\n");
 	rotate(stacks->stack_a);
 }
 
 void	rb(t_stacks *stacks)
 {
+	ft_printf("rb\n");
 	rotate(stacks->stack_b);
 }
 
 void	rr(t_stacks *stacks)
 {
+	ft_printf("rr\n");
 	rotate(stacks->stack_a);
 	rotate(stacks->stack_b);
 }
